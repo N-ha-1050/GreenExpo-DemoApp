@@ -1,18 +1,18 @@
-import { Metadata } from "next";
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "横浜花巡り（デモ）",
-  description: "横浜の花を巡るデモアプリ",
-};
+    title: "横浜花巡り（デモ）",
+    description: "横浜の花を巡るデモアプリ",
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="ja">
-      <body>{children}</body>
-    </html>
-  );
+    return (
+        <html lang="ja">
+            <body>{children}</body>
+        </html>
+    )
 }
