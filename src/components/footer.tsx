@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Logo } from "./logo"
-import { buttonVariants } from "./ui/button"
+import { Logo } from "@/components/logo"
+import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Twitter } from "lucide-react"
 import { navItems } from "@/lib/nav-items"

@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils"
 import { useChat } from "@ai-sdk/react"
 import { Flower, SendHorizontal, User } from "lucide-react"
 import { useEffect, useRef } from "react"
-import { Button } from "./ui/button"
-import { Textarea } from "./ui/textarea"
-import { Avatar } from "./ui/avatar"
+import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
+import { Avatar } from "@/components/ui/avatar"
 
 type Props = {
     flower: FlowerData
@@ -101,39 +101,11 @@ export function FlowerChat({ flower }: Props) {
                         className="min-h-[60px] flex-1 resize-none"
                     />
                     <Button type="submit" size="icon" disabled={!input.trim()}>
-                        <SendHorizontal className="h-5 w-5" />
+                        <SendHorizontal className="size-5" />
                         <span className="sr-only">送信</span>
                     </Button>
                 </form>
             </div>
         </div>
     )
-
-    // return (
-    //     <div className="mx-auto flex w-full flex-col py-24">
-    //         {messages.map((message) => (
-    //             <div key={message.id} className="whitespace-pre-wrap">
-    //                 {message.role === "user" ? "👤" : "🤖"}{" "}
-    //                 {message.parts.map((part, i) => {
-    //                     switch (part.type) {
-    //                         case "text":
-    //                             return (
-    //                                 <div key={`${message.id}-${i}`}>
-    //                                     {part.text}
-    //                                 </div>
-    //                             )
-    //                     }
-    //                 })}
-    //             </div>
-    //         ))}
-
-    //         <form onSubmit={handleSubmit}>
-    //             <input
-    //                 value={input}
-    //                 placeholder="質問を入力してください"
-    //                 onChange={handleInputChange}
-    //             />
-    //         </form>
-    //     </div>
-    // )
 }

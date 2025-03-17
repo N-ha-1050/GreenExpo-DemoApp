@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Logo } from "./logo"
-import { Button, buttonVariants } from "./ui/button"
+import { Logo } from "@/components/logo"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { useState } from "react"
 import {
     Sheet,
@@ -11,9 +11,9 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "./ui/sheet"
+} from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
-import { ModeToggle } from "./mode-toggle"
+import { ModeToggle } from "@/components/mode-toggle"
 import { navItems } from "@/lib/nav-items"
 
 export function Header() {
