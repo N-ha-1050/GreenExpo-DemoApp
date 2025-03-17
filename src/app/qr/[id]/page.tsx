@@ -20,6 +20,16 @@ import { notFound } from "next/navigation"
 
 type Props = { params: Promise<{ id: string }> }
 
+export async function generateMetadata({ params }: Props) {
+    const { id } = await params
+    const flower = flowerData.find((d) => d.id === id)
+    if (!flower) notFound()
+    return {
+        title: `${flower.name}`,
+        description: `${flower.name}をご紹介します。`,
+    }
+}
+
 export default async function Detail({ params }: Props) {
     const { id } = await params
     const flower = flowerData.find((d) => d.id === id)

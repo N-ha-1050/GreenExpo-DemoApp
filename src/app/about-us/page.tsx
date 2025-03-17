@@ -1,6 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Users, Utensils } from "lucide-react"
+import { Metadata } from "next"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+    title: "私たちについて",
+    description:
+        "横浜市立大学データサイエンス倶楽部についての情報をご紹介します。",
+}
 
 const activityItems = [
     {

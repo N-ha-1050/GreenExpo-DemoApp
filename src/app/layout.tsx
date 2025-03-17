@@ -5,8 +5,12 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "横浜花巡り（デモ）",
-    description: "横浜の花を巡るデモアプリ",
+    title: {
+        template: "%s - 横浜花巡り（2025/3/24 デモ）",
+        default: "横浜花巡り（2025/3/24 デモ）",
+    },
+    description:
+        "横浜市内に設置されたQRコードを読み取って、その場所に咲く花の情報を知ることができるデジタル散策アプリです。",
 }
 
 export default function RootLayout({
