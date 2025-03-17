@@ -33,7 +33,7 @@ export default function Home() {
                     priority
                     className="absolute inset-0 z-0 object-cover"
                 />
-                <div className="container relative z-10 max-w-2xl px-4 py-24 text-white md:py-32">
+                <div className="container relative z-10 max-w-2xl bg-gradient-to-r from-background/60 via-background/60 via-60% to-background/0 px-4 py-24 md:py-32">
                     <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
                         横浜の花をQRで巡る旅
                     </h1>
