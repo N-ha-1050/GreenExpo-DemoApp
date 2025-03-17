@@ -11,8 +11,11 @@ export function Footer() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div>
                     <Logo />
-                    <p className="mt-4">
+                    <p className="leading-7 [&:not(:first-child)]:mt-6">
                         横浜市内に設置されたQRコードを読み取って、その場所に咲く花の情報を知ることができるデジタル散策アプリです。
+                    </p>
+                    <p className="leading-7 [&:not(:first-child)]:mt-6">
+                        注意：このサイトはデモサイトです。情報の正確性を保証しません。
                     </p>
                 </div>
                 <div>

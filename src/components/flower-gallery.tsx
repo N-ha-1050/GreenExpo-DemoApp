@@ -43,7 +43,7 @@ export function FlowerGallery({ images, name }: Props) {
     }
 
     return (
-        <div className="mx-4">
+        <div className="mx-4 space-y-4">
             {/* メイン画像 */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg border">
                 <Image

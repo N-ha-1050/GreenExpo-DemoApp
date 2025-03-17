@@ -1,44 +1,28 @@
+import { FlowerChat } from "@/components/flower-chat"
 import { FlowerGallery } from "@/components/flower-gallery"
 import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { flowerData } from "@/lib/flower-data"
 import { cn } from "@/lib/utils"
-import { Calendar, Clock, Flower, Heart, Info, MapPin } from "lucide-react"
+import {
+    Calendar,
+    Clock,
+    Flower,
+    Heart,
+    Info,
+    MapPin,
+    MessageCircle,
+} from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
 type Props = { params: Promise<{ id: string }> }
 
-const data = [
-    {
-        id: "rose",
-        name: "ばら",
-        scientificName: "Rosa",
-        description:
-            "バラは美しい花と香りで知られる花木です。世界中で愛され、様々な品種が作られています。横浜市内の公園や庭園で見ることができます。",
-        flowerLanguage: "愛、美、情熱",
-        bestSeason: "5月〜6月、10月〜11月",
-        category: "バラ科バラ属",
-        origin: "ヨーロッパ、アジア、北アメリカなど広域",
-        height: "30cm〜3m（品種による）",
-        lifespan: "多年草",
-        colors: ["赤", "ピンク", "白", "黄", "オレンジ", "紫"],
-        images: ["/rose1.jpg", "/rose2.jpg", "/rose3.jpg"],
-        history:
-            "バラの栽培の歴史は古く、紀元前から観賞用や香料として栽培されていました。18世紀以降、ヨーロッパで品種改良が盛んになり、現在では数万種類の品種があると言われています。",
-        care: "日当たりと風通しの良い場所を好みます。定期的な剪定と肥料、病害虫対策が必要です。",
-        locations: [
-            { name: "山下公園", slug: "yamashita-park" },
-            { name: "港の見える丘公園", slug: "minato-no-mieru-oka-park" },
-            { name: "アメリカ山講演", slug: "mt-america" },
-        ],
-    },
-]
-
 export default async function Detail({ params }: Props) {
     const { id } = await params
-    const flower = data.find((d) => d.id === id)
+    const flower = flowerData.find((d) => d.id === id)
     if (!flower) notFound()
     return (
         <>
@@ -108,18 +92,18 @@ export default async function Detail({ params }: Props) {
             {/* タブコンテンツ - 詳細情報 */}
             <div className="mx-4 my-8">
                 <Tabs defaultValue="details">
-                    <TabsList className="grid w-full grid-cols-2">
+                    <TabsList className="grid w-full grid-cols-3">
                         <TabsTrigger value="details">詳細情報</TabsTrigger>
                         <TabsTrigger value="locations">
                             観賞スポット
                         </TabsTrigger>
-                        {/* <TabsTrigger
+                        <TabsTrigger
                             value="chat"
                             className="flex items-center gap-1"
                         >
                             <MessageCircle className="size-4" />
                             チャット
-                        </TabsTrigger> */}
+                        </TabsTrigger>
                     </TabsList>
                     <TabsContent value="details" className="p-4">
                         <div className="space-y-4">
@@ -205,6 +189,9 @@ export default async function Detail({ params }: Props) {
                                 ))}
                             </div>
                         </div>
+                    </TabsContent>
+                    <TabsContent value="chat" className="p-4">
+                        <FlowerChat flower={flower} />
                     </TabsContent>
                 </Tabs>
             </div>
