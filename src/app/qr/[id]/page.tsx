@@ -4,15 +4,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
-import {
-    Calendar,
-    Clock,
-    Flower,
-    Heart,
-    Info,
-    MapPin,
-    MessageCircle,
-} from "lucide-react"
+import { Calendar, Clock, Flower, Heart, Info, MapPin } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
