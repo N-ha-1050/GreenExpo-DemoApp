@@ -19,6 +19,8 @@ export type Flower = {
     }[]
 }
 
+// AI生成のデータ
+// 事実確認は行っていない
 export const flowerData: Flower[] = [
     {
         id: "ab04dcf2-3bdc-4df4-9073-c4eef80d21f1",
