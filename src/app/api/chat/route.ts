@@ -7,12 +7,8 @@ export const maxDuration = 30
 export async function POST(req: Request) {
     const { messages, systemPrompt } = await req.json()
 
-    // const system = systemPrompt
-    //     ? { role: "system", content: systemPrompt }
-    //     : undefined
-
     const result = streamText({
-        model: google("gemini-1.5-flash"),
+        model: google("gemini-2.0-flash-lite-preview-02-05"),
         messages,
         system: systemPrompt,
     })
